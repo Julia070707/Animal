@@ -19,14 +19,13 @@ public class Cat extends Animal {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        if (!super.equals(obj)) return false;
         Cat cat = (Cat) obj;
-        return Objects.equals(furColor, cat.furColor);
+        return Objects.equals(name, cat.name) && furColor.equals(cat.furColor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), furColor);
+        return Objects.hash(name, furColor);
     }
 
     @Override
@@ -34,4 +33,3 @@ public class Cat extends Animal {
         return "Cat{name='" + name + "', furColor='" + furColor + "'}";
     }
 }
-
